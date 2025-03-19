@@ -1,5 +1,6 @@
 package com.myproject;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HoseAdapter implements PriceFetcher {
