@@ -7,7 +7,8 @@ public class HoseAdapter implements PriceFetcher {
     private List<String> stockCodes;
  
     public HoseAdapter(HosePriceFetchLib hoseLib, List<String> stockCodes) {
-        // TODO: Implement constructor
+        this.hoseLib = hoseLib;
+        this.stockCodes = stockCodes;
     }
 
     @Override
