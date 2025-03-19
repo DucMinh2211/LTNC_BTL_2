@@ -36,7 +36,7 @@ public class StockFeeder {
 
     public void unregisterViewer(String code, StockViewer stockViewer) {
         // TODO: Implement unregister logic, including error logging
-        bool viewerRegistered = viewers.get(code).contains(stockViewer);
+        boolean viewerRegistered = viewers.get(code).contains(stockViewer);
         if (!viewers.containsKey(code) || !viewerRegistered) {
             Logger.errorUnregister(code);
         }
