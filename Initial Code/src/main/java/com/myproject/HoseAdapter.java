@@ -26,6 +26,6 @@ public class HoseAdapter implements PriceFetcher {
 
     private StockPrice convertToStockPrice(HoseData hoseData) {
         // TODO: Convert HoseData to StockPrice
-        return StockPrice(hoseData.getStockCode(), hoseData.getPrice(), hoseData.getVolume(), hoseData.getTimestamp());
+        return new StockPrice(hoseData.getStockCode(), hoseData.getPrice(), hoseData.getVolume(), hoseData.getTimestamp());
     }
 }
