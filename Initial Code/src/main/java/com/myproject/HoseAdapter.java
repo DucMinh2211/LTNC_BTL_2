@@ -14,11 +14,18 @@ public class HoseAdapter implements PriceFetcher {
     @Override
     public List<StockPrice> fetch() {
         // TODO: Fetch stock data and convert it to StockPrice list
-        return null;
+
+        List<HoseData> hoseDatas = hoseLib.getPrices(stockCodes);
+        List<StockPrice> stockPrices = new ArrayList<> ();
+
+        for (HoseData hoseData : hoseDatas) {
+            stockPrices.add(convertToStockPrice(hoseData));
+        }
+        return stockPrices;
     }
 
     private StockPrice convertToStockPrice(HoseData hoseData) {
         // TODO: Convert HoseData to StockPrice
-        return null;
+        return StockPrice(hoseData.getStockCode(), hoseData.getPrice(), hoseData.getVolume(), hoseData.getTimestamp());
     }
 }
