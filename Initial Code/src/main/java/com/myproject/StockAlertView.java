@@ -21,11 +21,13 @@ public class StockAlertView implements StockViewer {
         double currentPrice = stockPrice.getAvgPrice();
         Double lastAlertedPrice = lastAlertedPrices.get(code);
 
-        if (lastAlertedPrice == currentPrice) return;
+        if (lastAlertedPrice != null && lastAlertedPrice == currentPrice) return;
         if (currentPrice < alertThresholdLow) {
+            lastAlertedPrices.put(code, currentPrice);
             alertBelow(code, currentPrice);
         }
         else if (currentPrice > alertThresholdHigh) {
+            lastAlertedPrices.put(code, currentPrice);
             alertAbove(code, currentPrice);
         }
     }
